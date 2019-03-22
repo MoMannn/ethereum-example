@@ -1,0 +1,25 @@
+{
+  "name": "ethereum-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tadej Vengust",
+  "license": "ISC",
+  "dependencies": {
+    "@0xcert/ethereum-asset-ledger": "^1.0.1",
+    "@0xcert/ethereum-http-provider": "^1.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.11.5",
+    "typescript": "^3.3.4000"
+  }
+}

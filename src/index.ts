@@ -1,4 +1,4 @@
-// Importing everything.
+// Import everything.
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import { HttpProvider } from '@0xcert/ethereum-http-provider';
@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 const port = 3000;
 
-// Instance of provider (this uses my ethereum address as accountId, please replace with you own).
+// Instance of provider (this uses my Ethereum address as accountId, please replace it with your own).
 const provider = new HttpProvider({
   url: 'http://127.0.0.1:8545',
   accountId: '0x43813a78436c9ce02c97dd93ccd0ba33618f379b',
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 // Deploy a new asset ledger.
 app.post('/deploy', async (req, res) => {
-  // I'm adding CORS headers to allow this API to be used in index.html open from file system.
+  // I'm adding CORS headers to allow this API to be used in index.html opened from file system.
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
@@ -36,10 +36,11 @@ app.post('/deploy', async (req, res) => {
     uriBase: req.body.uriBase,
     schemaId: req.body.schemaId,
     capabilities: req.body.capabilities
-  }); // You can catch errors by adding .catch((e) => console.log(e))
+  }); // You can catch errors by adding .catch((e) => console.log(e)).
   res.send(mutation.id);
 });
 
+// Create a new asset.
 app.post('/create', async (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -53,6 +54,7 @@ app.post('/create', async (req, res) => {
   res.send(mutation.id);
 });
 
+// Transfer an asset.
 app.post('/transfer', async (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

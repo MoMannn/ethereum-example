@@ -5,6 +5,7 @@ This repository contains the end result of the following tutorials:
 - [Deploy asset ledger](https://0xcert.org/news/0xcert-framework-tutorial-3-deploy-asset-ledger/)
 - [Create new assets](https://0xcert.org/news/0xcert-framework-tutorial-4-create-new-assets/)
 - [Transfer assets](https://0xcert.org/news/0xcert-framework-tutorial-5-transfer-assets/)
+- [Atomic operations](https://0xcert.org/news/0xcert-framework-tutorial-6-atomic-operations/)
 
 Please check the tutorials to see how the code works.
 

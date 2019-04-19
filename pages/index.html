@@ -41,6 +41,12 @@
       <button id="transfer">Transfer</button>
       <p id="transferConsole"></p>
 
+       <!-- ******** Button to call atomic order ******** -->
+       <h1>Atomic order</h1>
+       <p>Because of how dynamic atomic operations are we hardcoded everything in the API. Please go and change the fields with you own data. This API call will also perform multiple transaction to the blockchain so it may take a while before you get a response.</p>
+       <button id="atomicOrder">Perform atomic order</button>
+       <p id="atomicOrderConsole"></p>
+
       <script>
         // Setting ajax to use JSON.
         $.ajax({
@@ -98,6 +104,17 @@
                     },
                     function (response) {
                         $('#transferConsole').html('<a href="https://ropsten.etherscan.io/tx/' + response + '" target="_blank">Check transaction on etherscan</a>.');
+                    }
+                );
+            });
+
+            $('#atomicOrder').click(function(){
+                // Calling atomic-order API with parameters.
+                $.post(
+                    "http://localhost:3000/atomic-order",
+                    { },
+                    function (response) {
+                        $('#atomicOrderConsole').html('<a href="https://ropsten.etherscan.io/tx/' + response + '" target="_blank">Check transaction on etherscan</a>.');
                     }
                 );
             });
